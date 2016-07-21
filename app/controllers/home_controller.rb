@@ -1,10 +1,10 @@
 class HomeController < ApplicationController
 
   def index
-    @tweets = $twitter.user_timeline("matthijsMmaas", count: 202)
+    @tweets = $twitter.user_timeline("matthijsMmaas", count: 10)
     respond_to do |format|
     format.html # index.html.erb
-    format.json { render json: @posts }
+    format.json { render json: @tweets }
   end
 
 end

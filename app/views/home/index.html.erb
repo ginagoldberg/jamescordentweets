@@ -1,7 +1,7 @@
 <h1>James Corden Tweets</h1>
 
   <% @tweets.each do |tweet| %>
-  <p><%= tweet.text %></p>
+  <p><%= tweet.created_at %> <%= tweet.id %> <%= tweet.text %></p>
   <% end %>
 
 
