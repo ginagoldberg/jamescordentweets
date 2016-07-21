@@ -1,8 +1,15 @@
 <h1>James Corden Tweets</h1>
 
-  <% @tweets.each do |tweet| %>
-  <p><%= tweet.created_at %> <%= tweet.id %> <%= tweet.text %></p>
-  <% end %>
+
+<% n = 0 %>
+<% @tweets.each do |tweet| %>
+<p>
+  <% n += 1 %>
+  <%= n %>
+  <%= tweet.text %>
+  <%= "#{time_ago_in_words(tweet.created_at)} ago (#{tweet.created_at.strftime("%b %d, %Y")})" %>
+</p>
+<% end %>
 
 
 
