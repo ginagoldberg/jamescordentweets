@@ -1,16 +1,30 @@
-<h1>James Corden Tweets</h1>
-<%= image_tag("james.jpg", class: "picture") %>
+<!-- Responsive page showing how much @JKCorden has (re)tweeted on Twitter these last 6 months -->
 
-<!-- Display each tweet -->
-<% n = 0 %>
-<% @tweets.each do |tweet| %>
-<p>
+<div class="header">
+  <h1>James Corden Tweets</h1>
+  <h2>How much has <%= link_to "@JKCorden", 'https://twitter.com/jkcorden?lang=en', class: "link" %> (re)tweeted these last 6 months?</h2>
+  <%= image_tag("james.jpg", class: "picture") %>
+</div>
+
+<!-- Display tweets with a number (1 = newest, 2= slightly older, 3 = even older, etc) -->
+<div class="tweets">
+  <% n = 0 %>
+
+  <% @tweets.each do |tweet| %>
   <% n += 1 %>
-  <%= n %>
-  <%= tweet.text %>
-  <%= "#{time_ago_in_words(tweet.created_at)} ago (#{tweet.created_at.strftime("%b %d, %Y")})" %>
-</p>
-<% end %>
+  <p class="tweet_num"><%= n %></p>
 
+  <!-- Differentiate retweets and tweets -->
+  <% if tweet.text.start_with?('RT') %>
+  <p class="retweet_text"><%= tweet.text %></p>
+  <% else %>
+  <p class="tweet_text"><%= tweet.text %></p>
+  <% end %>
 
+  <!-- Display when tweet was posted -->
+  <p class="time_ago">
+    <%= "#{time_ago_in_words(tweet.created_at)} ago (#{tweet.created_at.strftime("%b %d, %Y")})" %>
+  </p>
 
+  <% end %>
+</div>
