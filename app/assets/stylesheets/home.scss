@@ -1,3 +1,81 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-color: #F2EFE4;
+}
+
+div.header {
+ text-align: center;
+ margin: 20px;
+ font-family: helvetica;
+ color: #4C3327;
+}
+
+.header h1 {
+ font-weight: bold;
+ font-variant: small-caps;
+ font-size: 40px;
+ margin-bottom: 10px;
+}
+
+.header h2 {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  opacity: 0.65;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 22.5px;
+  color: #4C3327;
+  opacity: 0.65;
+}
+
+a:hover {
+  color: #5EA9DD;
+  opacity: 1;
+  transition-duration: 0.2s;
+}
+
+.picture {
+ border: 1px solid rgba(76, 51, 39, 0.65);
+ border-radius: 2px;
+ padding: 5px;
+ display: block;
+ margin: auto;
+ max-width: 90%;
+}
+
+p {
+  margin: 10px;
+  font-family: helvetica;
+}
+
+div.tweets {
+  display: block;
+  margin: auto;
+  max-width: 850px;
+  font-size: 1.4em;
+}
+
+.tweet_num {
+  padding: 10px;
+  color: #4C3327;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.tweet_text {
+  color: #BD3632;
+}
+
+.retweet_text {
+  color: #4C3327;
+  opacity: 0.65;
+}
+
+.time_ago {
+  color: #CB8C1D;
+  text-align: right;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed rgba(76, 51, 39, 0.65);
+  font-size: 15px;
+}
